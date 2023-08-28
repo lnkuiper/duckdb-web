@@ -1237,6 +1237,18 @@
     "result": 0.9333333333333333
   },
   {
+    "struct": "JulianDayFun",
+    "name": "julian",
+    "parameters": [
+      "ts"
+    ],
+    "description": "Extract the Julian Day number from a date or timestamp",
+    "example": "julian(timestamp '2006-01-01 12:00')",
+    "type": "scalar_function_set",
+    "category": "date",
+    "result": null
+  },
+  {
     "name": "kahan_sum",
     "parameters": [
       "arg"
@@ -1433,11 +1445,12 @@
     "parameters": [
       "list",
       "begin",
-      "end"
+      "end[",
+      "step]"
     ],
-    "description": "Extract a sublist using slice conventions. NULLs are interpreted as the bounds of the LIST. Negative values are accepted.",
-    "example": "list_slice(l, 2, NULL)",
-    "type": "scalar_function",
+    "description": "Extract a sublist using slice conventions. Negative values are accepted.",
+    "example": "list_slice(l, 2, 4)",
+    "type": "scalar_function_set",
     "aliases": [
       "array_slice"
     ],
@@ -2850,7 +2863,7 @@
     "example": "version()",
     "type": "scalar_function",
     "category": "generic",
-    "result": "v0.8.2-dev2278"
+    "result": "v0.8.2-dev3055"
   },
   {
     "name": "week",
